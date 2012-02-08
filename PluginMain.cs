@@ -284,9 +284,9 @@ namespace MessagePlugin
                                 ));
                         }
 
-                        //How many regions per page
+                        //How many messages per page
                         const int pagelimit = 5;
-                        //How many regions per line
+                        //How many messages per line
                         const int perline = 1;
                         //Pages start at 0 but are displayed and parsed at 1
                         int page = 0;
@@ -308,7 +308,6 @@ namespace MessagePlugin
                             messages.Add(message);
                         }
 
-                        // Are there even any houses to display?
                         if (messages.Count == 0)
                         {
                             args.Player.SendMessage("You haven't got unread messages.", Color.Red);
@@ -375,9 +374,9 @@ namespace MessagePlugin
                                 ));
                         }
                   
-                        //How many regions per page
+                        //How many messages per page
                         const int pagelimit = 5;
-                        //How many regions per line
+                        //How many messages per line
                         const int perline = 1;
                         //Pages start at 0 but are displayed and parsed at 1
                         int page = 0;
@@ -399,7 +398,6 @@ namespace MessagePlugin
                             messages.Add(message);
                         }
 
-                        // Are there even any houses to display?
                         if (messages.Count == 0)
                         {
                             args.Player.SendMessage("You haven't got messages.", Color.Red);
@@ -518,7 +516,7 @@ namespace MessagePlugin
                             int player = GetPlayerInDb(args.Parameters[0].ToString());
 
                             if (player > 0)
-                            {
+                            { 
                                 string mailTo = args.Parameters[0].ToString();
                                 SendMessage(mailTo, GetPlayerById(args.Player.Index).TSPlayer.Name, args.Parameters[1]);
 
